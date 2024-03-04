@@ -6,16 +6,16 @@ import jwtDecode from "jwt-decode";
 
 export const login = async ({ username, password }, dispatch) => {
   try {
-    
+
     const res = await post(path.login, { username, password });
-    
+
     // console.log("res - login", res);
     if (res.success) {
       dispatch(loginSuccess(res.data));
       getUser(res.data.accessToken, res.data.refreshToken, dispatch);
     }
     // handleShowLogin();
-   
+
   } catch (error) {
     console.log("err ", error);
     return error.response.data.message;
