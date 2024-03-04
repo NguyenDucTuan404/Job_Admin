@@ -16,5 +16,6 @@ export const applyJob = async (formData, accessToken, refreshToken, dispatch, na
   } catch (error) {
     console.log(error);
     toast.error("Lỗi Từ Server!");
+
   }
 }
